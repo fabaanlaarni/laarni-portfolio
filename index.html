@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laarni Fabaan | Content Writer Portfolio</title>
+  <meta name="description" content="Content writer portfolio of Laarni Fabaan featuring blogs, articles, web copy, case studies, technical writing, newsletters, and social media content." />
+  <style>
+    :root {
+      --bg: #f4fbfa;
+      --surface: #ffffff;
+      --surface-2: #ecf8f6;
+      --text: #183635;
+      --muted: #5d7a78;
+      --accent: #48b3ac;
+      --accent-dark: #2e8f89;
+      --accent-soft: #dff3f1;
+      --border: #d7ece9;
+      --shadow: 0 10px 30px rgba(35, 90, 87, 0.08);
+      --max-width: 1100px;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(244, 251, 250, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 0.95rem;
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+
+    .nav-links a:hover {
+      background: var(--accent-soft);
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 70px 0 40px;
+    }
+
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      margin: 0 0 16px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 22px;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, #ffffff, #eef9f7);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .hero-points div {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: var(--text);
+      font-size: 0.96rem;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent-soft);
+      text-decoration: none;
+    }
+
+    section {
+      padding: 22px 0 26px;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin: 0 0 10px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      margin: 0 0 24px;
+      max-width: 760px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-item {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .service-item h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .rate-box {
+      background: linear-gradient(180deg, #ffffff, #f6fcfb);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .rate-box ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+    }
+
+    .portfolio-category {
+      background: #fbfefe;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .portfolio-category h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .portfolio-category p {
+      margin-top: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .sample-list {
+      list-style: none;
+      margin: 14px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .sample-list li {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .sample-title {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .sample-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .about-highlight {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .about-highlight .mini {
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+    }
+
+    .contact-box {
+      background: #fbfefe;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-wrap,
+      .grid-2,
+      .grid-3,
+      .services-list,
+      .contact-grid,
+      .about-highlight {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">Laarni Fabaan</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#rates">Rates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-wrap">
+      <div>
+        <div class="badge">✍️ Content Writer Portfolio</div>
+        <h1>Helping brands communicate clearly through strategic, reader-focused writing.</h1>
+        <p class="subtitle">
+          Hi, I’m <strong>Laarni Fabaan</strong> — a content writer with experience in blog writing, technical articles,
+          case studies, newsletters, landing pages, and social media copy. I create content that is clear, engaging,
+          and aligned with your goals.
+        </p>
+
+        <div class="cta-group">
+          <a href="#portfolio" class="btn btn-primary">View Writing Samples</a>
+          <a href="mailto:fabaanlaarni@gmail.com" class="btn btn-secondary">Email Me</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3 style="margin-top:0;">What I can help you with</h3>
+        <div class="hero-points">
+          <div>✅ Blog articles and SEO content</div>
+          <div>✅ Website and landing page copy</div>
+          <div>✅ Case studies and long-form writing</div>
+          <div>✅ Technical / Web3 / crypto content</div>
+          <div>✅ Newsletter and social media copy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <section id="about">
+      <div class="section-card">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-intro">
+          I’m a writer with a diverse content background across personal development, finance, business, technical topics,
+          Web3, newsletters, social media, and website copy. My writing style is adaptable, research-driven, and focused
+          on delivering value to both brands and readers.
+        </p>
+
+        <p>
+          Over the years, I’ve written for different formats and audiences — from personal blogs and SEO articles to
+          case studies, landing pages, whitepapers, and promotional content. This range helps me quickly understand
+          different tones, niches, and business goals.
+        </p>
+
+        <div class="about-highlight">
+          <div class="mini">🧠 Clear, structured, easy-to-read writing</div>
+          <div class="mini">📈 Content aligned with audience and business goals</div>
+          <div class="mini">🔍 Flexible across lifestyle, business, and technical topics</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-card">
+        <h2 class="section-title">Services</h2>
+        <p class="section-intro">
+          If you need focused, well-written content that supports your brand and speaks to your audience, here are the
+          writing services I can provide:
+        </p>
+
+        <div class="services-list">
+          <div class="service-item">
+            <h3>✍️ Blog & Article Writing</h3>
+            <p class="muted">Engaging articles for lifestyle, finance, business, niche, and educational topics.</p>
+          </div>
+          <div class="service-item">
+            <h3>🌐 Website Copy</h3>
+            <p class="muted">Clear and conversion-focused writing for websites, landing pages, and product pages.</p>
+          </div>
+          <div class="service-item">
+            <h3>📘 Case Studies & Whitepapers</h3>
+            <p class="muted">Structured long-form content that explains products, services, and business value.</p>
+          </div>
+          <div class="service-item">
+            <h3>🧠 Technical Writing</h3>
+            <p class="muted">Simplifying complex topics into content that is understandable and informative.</p>
+          </div>
+          <div class="service-item">
+            <h3>📰 Newsletter Content</h3>
+            <p class="muted">Timely updates, business news, and audience-friendly newsletter writing.</p>
+          </div>
+          <div class="service-item">
+            <h3>📣 Social Media Copywriting</h3>
+            <p class="muted">Short-form promotional and brand-support content for social platforms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="section-card">
+        <h2 class="section-title">Portfolio</h2>
+        <p class="section-intro">
+          Here are selected writing samples grouped by type, so clients can quickly browse the kind of content I create.
+        </p>
+
+        <div class="grid-2">
+
+          <div class="portfolio-category">
+            <h3>✍️ Personal & Lifestyle Writing</h3>
+            <p>Thoughtful, reader-friendly content focused on personal insights, growth, and lifestyle topics.</p>
+            <ul class="sample-list">
+              <li>
+                <a class="sample-title" href="https://footstepstoabetteryou.wordpress.com/" target="_blank" rel="noopener">Footsteps to a Better You</a>
+                <span class="sample-note">Personal blog featuring self-improvement and reflective lifestyle writing.</span>
+              </li>
+              <li>
+                <a class="sample-title" href="https://www.aha-now.com/overcome-midlife-crisis/" target="_blank" rel="noopener">How to Overcome a Midlife Crisis in Your Early 30s</a>
+                <span class="sample-note">Lifestyle article written in an encouraging, relatable tone.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="portfolio-category">
+            <h3>💰 Finance & Business Writing</h3>
+            <p>Content designed for readers interested in money, business, and practical insights.</p>
+            <ul class="sample-list">
+              <li>
+                <a class="sample-title" href="https://themoneybabbler.wordpress.com/" target="_blank" rel="noopener">The Money Babbler</a>
+                <span class="sample-note">Personal finance blog reflecting niche interest and writing range.</span>
+              </li>
+              <li>
+                <a class="sample-title" href="https://bit.ly/487cO0C" target="_blank" rel="noopener">HubSpot Case Study</a>
+                <span class="sample-note">Case-study style business content focused on outcomes and structure.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="portfolio-category">
+            <h3>📘 Case Studies & Long-Form Content</h3>
+            <p>Research-based, structured writing for informative and business-focused content assets.</p>
+            <ul class="sample-list">
+              <li>
+                <a class="sample-title" href="https://www.dropbox.com/scl/fi/9twwa4423vyv58bxzue95/WELLE-Whitepaper-1.3.pdf?rlkey=23cqg2hppqzd9qyv7fhmnbysv&st=ibtm2fmd&dl=0" target="_blank" rel="noopener">WELLE Whitepaper</a>
+                <span class="sample-note">Long-form, formal writing requiring clarity, structure, and detail.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="portfolio-category">
+            <h3>🧠 Technical / Web3 / Crypto Writing</h3>
+            <p>Content for emerging tech, blockchain, and digital product audiences.</p>
+            <ul class="sample-list">
+              <li>
+                <a class="sample-title" href="https://medium.com/@riverex" target="_blank" rel="noopener">Technical Articles</a>
+                <span class="sample-note">Technical and product-focused articles published on Medium.</span>
+              </li>
+              <li>
+                <a class="sample-title" href="https://www.nftculture.com/nft-news/strmnft-marketplace-to-revolutionize-video-nfts/" target="_blank" rel="noopener">NFT Article</a>
+                <span class="sample-note">Web3/crypto content written for a niche digital audience.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="portfolio-category">
+            <h3>🌐 Website & Landing Page Copy</h3>
+            <p>Copy built to inform users quickly and support conversions.</p>
+            <ul class="sample-list">
+              <li>
+                <a class="sample-title" href="https://app.riverex.io/rewards" target="_blank" rel="noopener">Riverex Landing Page</a>
+                <span class="sample-note">Landing page copy designed to support product communication and action.</span>
+              </li>
+              <li>
+                <a class="sample-title" href="https://talmudcn.com/custom-luxury-ring-jewelry-wholesale-factory-in-china/" target="_blank" rel="noopener">Best Personalized Ring Jewelry Wholesale Manufacturer In China</a>
+                <span class="sample-note">SEO-focused commercial article with product and business intent.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="portfolio-category">
+            <h3>📣 Social Media Copywriting</h3>
+            <p>Short-form branded content written for audience engagement and promotion.</p>
+            <ul class="sample-list">
+              <li>
+                <a class="sample-title" href="https://www.instagram.com/riverex.io" target="_blank" rel="noopener">Riverex Instagram Copy</a>
+                <span class="sample-note">Social media copy for a brand in the tech/Web3 space.</span>
+              </li>
+              <li>
+                <a class="sample-title" href="https://www.instagram.com/streamcoinofficial" target="_blank" rel="noopener">Streamcoin Instagram Copy</a>
+                <span class="sample-note">Promotional and informative caption writing for social media.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="portfolio-category">
+            <h3>📰 Newsletter Content</h3>
+            <p>News and update-style content written for business audiences.</p>
+            <ul class="sample-list">
+              <li>
+                <a class="sample-title" href="https://tradelinkinternational.com/latest-news/" target="_blank" rel="noopener">Newsletter Writing Samples</a>
+                <span class="sample-note">Update-based content and company news writing.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="rates">
+      <div class="section-card">
+        <h2 class="section-title">Rates</h2>
+        <p class="section-intro">
+          My rates are simple and based on word count. If your project has a custom scope, I’m also open to discussing a tailored rate.
+        </p>
+
+        <div class="grid-3">
+          <div class="rate-box">
+            <h3 style="margin-top:0;">500 words and below</h3>
+            <p style="font-size:1.5rem; font-weight:700; margin:8px 0 0;">$25</p>
+          </div>
+          <div class="rate-box">
+            <h3 style="margin-top:0;">500–1,000 words</h3>
+            <p style="font-size:1.5rem; font-weight:700; margin:8px 0 0;">$50</p>
+          </div>
+          <div class="rate-box">
+            <h3 style="margin-top:0;">1,000–2,000 words</h3>
+            <p style="font-size:1.5rem; font-weight:700; margin:8px 0 0;">$100</p>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:18px;">
+          For long-term work, recurring content, or multi-format projects, feel free to contact me for a custom quote.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-card">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-intro">
+          If you'd like to work with me, the fastest way to reach me is through email or my professional profiles below.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-box">
+            <h3 style="margin-top:0;">📩 Get in touch</h3>
+            <p><strong>Email:</strong> <a href="mailto:fabaanlaarni@gmail.com">fabaanlaarni@gmail.com</a></p>
+            <p class="muted">
+              I’m open to freelance projects, part-time roles, and content writing opportunities.
+            </p>
+
+            <div class="contact-links">
+              <a class="btn btn-primary" href="mailto:fabaanlaarni@gmail.com">Send Email</a>
+              <a class="btn btn-secondary" href="https://www.linkedin.com/in/laarni-fabaan" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+
+          <div class="contact-box">
+            <h3 style="margin-top:0;">🌐 Professional Profiles</h3>
+            <p><a href="https://www.linkedin.com/in/laarni-fabaan" target="_blank" rel="noopener">LinkedIn</a></p>
+            <p><a href="https://www.upwork.com/freelancers/~0135942adcadc30e4e" target="_blank" rel="noopener">Upwork</a></p>
+            <p><a href="https://www.onlinejobs.ph/jobseekers/info/1854469" target="_blank" rel="noopener">OnlineJobs.ph</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Laarni Fabaan • Content Writer Portfolio
+    </div>
+  </footer>
+
+</body>
+</html>
